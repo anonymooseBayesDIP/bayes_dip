@@ -1,0 +1,39 @@
+iterations: 3000
+lr: 0.01
+scheduler:
+  use_scheduler: False
+  step_size: 1000
+  gamma: 0.5
+init_load_path: null
+init_load_iter: null
+num_probes: 50
+linear_cg:
+  max_iter: 150
+  rtol: 1
+  update_freq: 100
+  use_preconditioner: True
+  use_log_re_variant: False
+  use_preconditioned_probes: True
+  preconditioner:
+    name: low_rank_eig
+    # shared:
+    low_rank_rank_dim: 200
+    batch_size: 1
+    # used by low_rank_eig:
+    oversampling_param: 10
+    # used by incomplete_chol:
+    approx_diag_num_samples: 200
+min_log_variance: -6.9
+include_predcp: True
+predcp:
+  num_samples: 50
+  scale: 1.
+  use_map_weights_mean: True
+weights_linearization:
+  iterations: 1000
+  lr: 1e-4
+  wd: 1e-6
+  simplified_eqn: False
+  noise_precision: 1.
+use_linearized_weights: False
+log_path: ./

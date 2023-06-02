@@ -1,0 +1,19 @@
+defaults:
+  - base_mll_optim
+
+iterations: 3000
+num_probes: 10
+scheduler:
+  use_scheduler: True
+linear_cg:
+  max_iter: 50
+  use_log_re_variant: False
+  preconditioner:
+    name: low_rank_eig
+    low_rank_rank_dim: 200
+    oversampling_param: 10
+    batch_size: 32
+predcp:
+  num_samples: 20
+  scale: 1.
+use_linearized_weights: True

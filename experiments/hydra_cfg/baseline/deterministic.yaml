@@ -1,0 +1,2 @@
+name: deterministic
+load_log_noise_variance: False
